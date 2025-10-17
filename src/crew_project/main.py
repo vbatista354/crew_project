@@ -1,68 +1,17 @@
-#!/usr/bin/env python
-import sys
-import warnings
+from agents.report_generator import create_report_generator
+from task.generate_report import create_report_task
+from crewai import Crew
+import pandas as pd 
 
-from datetime import datetime
+#cargar datos desde el csv 
+sample_data = pd.read_csv("data/sample_transaccions.csv").to_dict(orient="records")
 
-from crew_project.crew import CrewProject
+#Agente y tarea 
+report_agent = create_report_generator()
+report_task = create_report_task(report_agent, sample_data)
 
-warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
+#crear y ejectuar crew 
+crew = Crew(agents=[report_agent], tasks=[report_task], verbose=2)
+result = crew.kickoff()
 
-# This main file is intended to be a way for you to run your
-# crew locally, so refrain from adding unnecessary logic into this file.
-# Replace with inputs you want to test with, it will automatically
-# interpolate any tasks and agents information
-
-def run():
-    """
-    Run the crew.
-    """
-    inputs = {
-        'topic': 'AI LLMs',
-        'current_year': str(datetime.now().year)
-    }
-    
-    try:
-        CrewProject().crew().kickoff(inputs=inputs)
-    except Exception as e:
-        raise Exception(f"An error occurred while running the crew: {e}")
-
-
-def train():
-    """
-    Train the crew for a given number of iterations.
-    """
-    inputs = {
-        "topic": "AI LLMs",
-        'current_year': str(datetime.now().year)
-    }
-    try:
-        CrewProject().crew().train(n_iterations=int(sys.argv[1]), filename=sys.argv[2], inputs=inputs)
-
-    except Exception as e:
-        raise Exception(f"An error occurred while training the crew: {e}")
-
-def replay():
-    """
-    Replay the crew execution from a specific task.
-    """
-    try:
-        CrewProject().crew().replay(task_id=sys.argv[1])
-
-    except Exception as e:
-        raise Exception(f"An error occurred while replaying the crew: {e}")
-
-def test():
-    """
-    Test the crew execution and returns the results.
-    """
-    inputs = {
-        "topic": "AI LLMs",
-        "current_year": str(datetime.now().year)
-    }
-    
-    try:
-        CrewProject().crew().test(n_iterations=int(sys.argv[1]), eval_llm=sys.argv[2], inputs=inputs)
-
-    except Exception as e:
-        raise Exception(f"An error occurred while testing the crew: {e}")
+print(result)
