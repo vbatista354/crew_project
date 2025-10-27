@@ -1,0 +1,25 @@
+=== Reporte Financiero Consolidado ===
+
+1. Reporte Básico:
+- Total Transacciones: 3
+- Promedio Transacción: 116.67€
+- Categorías Más Frecuentes:
+  - Alimentacion: 2
+  - Transporte: 1
+
+2. Análisis Avanzado:
+- Monto Máximo: 200€
+- Monto Mínimo: 50€
+- Mediana: 100.0€
+- Desviación Estándar: 76.38€
+- Transacción Más Cara: ID 3, 200€
+- Alertas (>150€):
+  - ID 3: 200€
+- Tendencias por Categoría:
+  - Alimentacion: 300€
+  - Transporte: 50€
+
+3. Recomendaciones:
+  1. Reducir gastos en Alimentacion (total: 300€), que excede significativamente el promedio de transacciones ( 116.67€).
+  2. Revisar transacciones altas (>150€): 1 detectadas.
+  3. Establecer un presupuesto mensual para categorias con gastos elevados.

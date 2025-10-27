@@ -1,0 +1,41 @@
+{
+    "reporte_basico": {
+        "total_transacciones": 3,
+        "promedio_transaccion": 116.67,
+        "categorias_mas_frecuentes": [
+            {
+                "categoria": "Alimentacion",
+                "conteo": 2
+            },
+            {
+                "categoria": "Transporte",
+                "conteo": 1
+            }
+        ]
+    },
+    "analisis_avanzado": {
+        "maximo": 200,
+        "minimo": 50,
+        "mediana": 100.0,
+        "desviacion_estandar": 76.38,
+        "transaccion_mas_cara": {
+            "id": 3,
+            "monto": 200
+        },
+        "alertas": [
+            {
+                "id": 3,
+                "monto": 200
+            }
+        ],
+        "tendencias": {
+            "Alimentacion": 300,
+            "Transporte": 50
+        }
+    },
+    "recomendaciones": [
+        "Reducir gastos en Alimentacion (total: 300€), que excede significativamente el promedio de transacciones ( 116.67€).",
+        "Revisar transacciones altas (>150€): 1 detectadas.",
+        "Establecer un presupuesto mensual para categorias con gastos elevados."
+    ]
+}
