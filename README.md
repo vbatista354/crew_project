@@ -57,36 +57,6 @@ Ejecución
    - data/reports/final_report.txt
    - data/sample_transactions_plot.png
 
-Estructura del Proyecto
------------------------
-crew_project/
-├── data/
-│   ├── sample_transactions.csv
-│   ├── reports/
-│   │   ├── final_report.json
-│   │   ├── final_report.txt
-│   ├── sample_transactions_plot.png
-├── src/
-│   ├── crew_project/
-│   │   ├── agents/
-│   │   │   ├── report_generator.py
-│   │   │   ├── data_analyzer.py
-│   │   │   ├── recommendation_agent.py
-│   │   ├── tasks/
-│   │   │   ├── generate_report.py
-│   │   │   ├── analyze_transactions.py
-│   │   │   ├── generate_recommendations.py
-│   │   ├── tools/
-│   │   │   ├── csv_tool.py
-│   │   │   ├── stats_tool.py
-│   │   │   ├── recommendation_tool.py
-│   │   ├── generate_plot.py
-│   │   ├── generate_final_report.py
-│   │   ├── main.py
-├── .env
-├── .gitignore
-├── requirements.txt
-├── README.md
 
 Ejemplos de Salidas
 -------------------
@@ -158,3 +128,4 @@ Autor
 -----
 
 Victor Batista Mañon
+
